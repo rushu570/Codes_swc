@@ -33,6 +33,12 @@ struct FenwickTree {
     int query(int l, int r) {
         return query(r) - (l > 0 ? query(l - 1) : 0);
     }
+
+    void rangeUpdate(int l, int r, int value) {
+        update(l, value);
+        if (r + 1 < n)
+            update(r + 1, -value);
+    }
 };
 
 int main() {
@@ -48,7 +54,7 @@ int main() {
     cout << "Maximum in range [1, 3]: " << max_val << endl;
 
     // Perform a range update
-    tree.update(2, 7);
+    tree.rangeUpdate(2, 4, 7);
 
     // Perform a range query after update
     max_val = tree.query(1, 3);
