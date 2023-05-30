@@ -72,5 +72,11 @@ int main() {
     cout << "Minimum in range [1, 3]: " << st.query(0, 0, st.n - 1, 1, 3) << endl;
     cout << "Minimum in range [2, 4]: " << st.query(0, 0, st.n - 1, 2, 4) << endl;
 
-    // Update an element and perform range minimum query
-    st.update(0, 0, st.n -
+    
+       // Update an element and perform range minimum query
+    st.update(0, 0, st.n - 1, 2, 1);
+    cout << "Minimum in range [1, 3] after update: " << st.query(0, 0, st.n - 1, 1, 3) << endl;
+
+    return 0;
+}
+
